@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Navigation from './components/scripts/Navigation';
+import Home from './components/scripts/Home';
+import Host from './components/scripts/Host';
+import Join from './components/scripts/Join';
+import Schedule from './components/scripts/Schedule';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navigation/>
+        <Switch>
+          <Route exact path="/get-together" component={Home} />
+          <Route exact path="/host" component={Host} />
+          <Route exact path="/join" component={Join} />
+          <Route exact path="/schedule" component={Schedule} />
+          <Route render={() => <h2>404 Page Not Found</h2>} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

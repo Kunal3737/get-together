@@ -1,0 +1,11 @@
+.homeDiv {
+    display: inline-flex;
+    border: 2px lightblue solid;
+    height: 300px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 50px 0 50px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px 5px;
+}
